@@ -14,6 +14,8 @@
 		DCF946301FCD10DB00780761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCF9462F1FCD10DB00780761 /* Assets.xcassets */; };
 		DCF946331FCD10DB00780761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF946311FCD10DB00780761 /* LaunchScreen.storyboard */; };
 		DCF9463B1FCD251C00780761 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9463A1FCD251C00780761 /* Helpers.swift */; };
+		DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9463C1FCD444D00780761 /* ObservableExample.swift */; };
+		DCF946401FCD46DD00780761 /* SubjectExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9463F1FCD46DD00780761 /* SubjectExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DCF946321FCD10DB00780761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCF946341FCD10DB00780761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCF9463A1FCD251C00780761 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		DCF9463C1FCD444D00780761 /* ObservableExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExample.swift; sourceTree = "<group>"; };
+		DCF9463F1FCD46DD00780761 /* SubjectExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		DCF946271FCD10DB00780761 /* rxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCF9463E1FCD448D00780761 /* Example */,
 				DCF946281FCD10DB00780761 /* AppDelegate.swift */,
 				DCF9462A1FCD10DB00780761 /* ViewController.swift */,
 				DCF9462C1FCD10DB00780761 /* Main.storyboard */,
@@ -80,6 +85,15 @@
 				DCF9463A1FCD251C00780761 /* Helpers.swift */,
 			);
 			path = rxSwiftDemo;
+			sourceTree = "<group>";
+		};
+		DCF9463E1FCD448D00780761 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				DCF9463C1FCD444D00780761 /* ObservableExample.swift */,
+				DCF9463F1FCD46DD00780761 /* SubjectExample.swift */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		EA7D055D5DCBA0A495E8EB69 /* Pods */ = {
@@ -222,9 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF946401FCD46DD00780761 /* SubjectExample.swift in Sources */,
 				DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */,
 				DCF9463B1FCD251C00780761 /* Helpers.swift in Sources */,
 				DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */,
+				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
