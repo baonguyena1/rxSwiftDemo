@@ -41,18 +41,38 @@ class ViewController: UIViewController {
             })
         }
         
+        example(description: "never") {
+            let dispose = DisposeBag()
+            let observable = Observable<Int>.never()
+            observable
+                .debug("com.baon", trimOutput: false)
+                .do(onSubscribe: {
+                    print("onSubscribe")
+                }, onSubscribed: {
+                    print("onSubscribed")
+                })
+                .subscribe(onNext: {
+                    print($0)
+                }, onCompleted: {
+                    print("completed")
+                })
+                .disposed(by: dispose)
+        }
+        
         example(description: "range") {
             let observable = Observable<Int>.range(start: 1, count: 20)
-            observable.subscribe(onNext: { (element) in
-                print(element)
-            }, onCompleted: {
-                print("completed")
-            })
+            observable
+                .subscribe(onNext: { (element) in
+                    print(element)
+                }, onCompleted: {
+                    print("completed")
+                })
         }
         
         example(description: "dispose") {
             let dispose = DisposeBag()
-            Observable.of("A", "B", "C")
+            Observable
+                .of("A", "B", "C")
                 .subscribe {
                     print($0)
                 }
@@ -76,6 +96,27 @@ class ViewController: UIViewController {
                     print("Disposed")
                 })
             .disposed(by: dispose)
+        }
+        
+        example(description: "defered") {
+            var flip = false
+            let dispose = DisposeBag()
+            let factory = Observable<Int>.deferred({ () -> Observable<Int> in
+                flip = !flip
+                if flip {
+                    return Observable<Int>.of(1, 2, 3)
+                }
+                return Observable<Int>.of(4, 5, 6)
+            })
+            
+            for _ in 0...3 {
+                factory
+                    .subscribe(onNext: { (element) in
+                        print(element, terminator: "")
+                    })
+                    .disposed(by: dispose)
+                print()
+            }
         }
         
     }
