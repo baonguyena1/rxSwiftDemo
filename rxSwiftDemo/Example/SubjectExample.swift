@@ -117,6 +117,7 @@ struct SubjectExample {
             variable.value = "2"
         }
         
+        // Challenge
         example(description: "PublishSubject") {
             
             let disposeBag = DisposeBag()
@@ -154,6 +155,74 @@ struct SubjectExample {
                 .disposed(by: disposeBag)
             
             deal(3)
+        }
+        
+        example(description: "Variable") {
+            
+            enum UserSession {
+                
+                case loggedIn, loggedOut
+            }
+            
+            enum LoginError: Error {
+                
+                case invalidCredentials
+            }
+            
+            let disposeBag = DisposeBag()
+            
+            // Create userSession Variable of type UserSession with initial value of .loggedOut
+            let userSession = Variable<UserSession>(.loggedOut)
+            
+            // Subscribe to receive next events from userSession
+            userSession.asObservable()
+                .subscribe(onNext: { (userSession) in
+                    print("userSession changed:", userSession)
+                })
+                .disposed(by: disposeBag)
+            
+            func logInWith(username: String, password: String, completion: (Error?) -> Void) {
+                guard username == "johnny@appleseed.com",
+                    password == "appleseed"
+                    else {
+                        completion(LoginError.invalidCredentials)
+                        return
+                }
+                
+                // Update userSession
+                userSession.value = .loggedIn
+            }
+            
+            func logOut() {
+                // Update userSession
+                userSession.value = .loggedOut
+            }
+            
+            func performActionRequiringLoggedInUser(_ action: () -> Void) {
+                // Ensure that userSession is loggedIn and then execute action()
+                guard userSession.value == .loggedIn else {
+                    print("you can't do that")
+                    return
+                }
+                action()
+            }
+            
+            for i in 1...2 {
+                let password = i % 2 == 0 ? "appleseed" : "password"
+                
+                logInWith(username: "johnny@appleseed.com", password: password) { error in
+                    guard error == nil else {
+                        print(error!)
+                        return
+                    }
+                    
+                    print("User logged in.")
+                }
+                
+                performActionRequiringLoggedInUser {
+                    print("Successfully did something only a logged in user can do.")
+                }
+            }
         }
         
     }
