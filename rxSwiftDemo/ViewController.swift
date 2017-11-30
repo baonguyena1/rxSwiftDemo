@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        ObservableExample.running()
-        SubjectExample.running()
+//        SubjectExample.running()
+        FilteringOperator.runnning()
         
     }
 }
