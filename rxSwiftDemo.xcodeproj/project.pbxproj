@@ -14,6 +14,7 @@
 		DC69504E1FCFDE690097C5C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69504D1FCFDE690097C5C9 /* MainViewController.swift */; };
 		DC6950501FCFDE780097C5C9 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69504F1FCFDE780097C5C9 /* PhotosViewController.swift */; };
 		DC6950521FCFDE8A0097C5C9 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950511FCFDE8A0097C5C9 /* PhotoCell.swift */; };
+		DC6950541FD000D00097C5C9 /* UIAlertViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */; };
 		DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF946281FCD10DB00780761 /* AppDelegate.swift */; };
 		DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9462A1FCD10DB00780761 /* ViewController.swift */; };
 		DCF9462E1FCD10DB00780761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF9462C1FCD10DB00780761 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		DC69504D1FCFDE690097C5C9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC69504F1FCFDE780097C5C9 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		DC6950511FCFDE8A0097C5C9 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Rx.swift"; sourceTree = "<group>"; };
 		DCF946251FCD10DB00780761 /* rxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF946281FCD10DB00780761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCF9462A1FCD10DB00780761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */,
 				DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */,
+				DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */,
 			);
 			path = Combinestagram;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				DC6950521FCFDE8A0097C5C9 /* PhotoCell.swift in Sources */,
 				DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */,
 				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,
+				DC6950541FD000D00097C5C9 /* UIAlertViewController+Rx.swift in Sources */,
 				DC69504E1FCFDE690097C5C9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
