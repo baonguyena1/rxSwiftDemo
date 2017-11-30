@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 //        ObservableExample.running()
 //        SubjectExample.running()
 //        FilteringOperator.runnning()
-            SkippingOperator.running()
+//        SkippingOperator.running()
+        TakingOperator.running()
     }
 }
 

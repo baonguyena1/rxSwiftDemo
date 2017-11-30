@@ -17,6 +17,7 @@
 		DC6950541FD000D00097C5C9 /* UIAlertViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */; };
 		DC6950571FD007B70097C5C9 /* FilteringOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950561FD007B70097C5C9 /* FilteringOperator.swift */; };
 		DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950581FD00B910097C5C9 /* SkippingOperator.swift */; };
+		DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */; };
 		DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF946281FCD10DB00780761 /* AppDelegate.swift */; };
 		DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9462A1FCD10DB00780761 /* ViewController.swift */; };
 		DCF9462E1FCD10DB00780761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF9462C1FCD10DB00780761 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Rx.swift"; sourceTree = "<group>"; };
 		DC6950561FD007B70097C5C9 /* FilteringOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringOperator.swift; sourceTree = "<group>"; };
 		DC6950581FD00B910097C5C9 /* SkippingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkippingOperator.swift; sourceTree = "<group>"; };
+		DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingOperator.swift; sourceTree = "<group>"; };
 		DCF946251FCD10DB00780761 /* rxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF946281FCD10DB00780761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCF9462A1FCD10DB00780761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				DC6950561FD007B70097C5C9 /* FilteringOperator.swift */,
 				DC6950581FD00B910097C5C9 /* SkippingOperator.swift */,
+				DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */,
 			);
 			path = FilteringOperator;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */,
 				DCF9463B1FCD251C00780761 /* Helpers.swift in Sources */,
 				DC6950501FCFDE780097C5C9 /* PhotosViewController.swift in Sources */,
+				DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */,
 				DC6950521FCFDE8A0097C5C9 /* PhotoCell.swift in Sources */,
 				DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */,
 				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,
