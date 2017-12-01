@@ -53,7 +53,6 @@ struct OperatorChallenge {
                 .toArray()
                 .subscribe(onNext: { (phones) in
                     let phone = phoneNumber(from: phones)
-                    print(phone)
                     if let contact = contacts[phone] {
                         print("Dialing \(contact) \(phone)")
                     } else {
@@ -69,7 +68,7 @@ struct OperatorChallenge {
             input.onNext(1)
             
             // Confirm that 7 results in "Contact not found", and then change to 2 and confirm that Junior is found
-            input.onNext(2)
+            input.onNext(7)
             for character in "5551212" {
                 if let number = Int(String(character)) {
                     input.onNext(number)

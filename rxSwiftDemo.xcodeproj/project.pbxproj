@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA288F122EC3802C5274C6BC /* Pods_rxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039431EB44B8B9C60DA10AFA /* Pods_rxSwiftDemo.framework */; };
+		DC01AB5D1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */; };
 		DC6950441FCF9F990097C5C9 /* Combinestagram.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */; };
 		DC69504A1FCFDE140097C5C9 /* UIImage+Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */; };
 		DC69504C1FCFDE430097C5C9 /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */; };
@@ -33,6 +34,7 @@
 		039431EB44B8B9C60DA10AFA /* Pods_rxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		270B145928511CF0D76623D0 /* Pods-rxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B741F98B269A2B50B79A38FD /* Pods-rxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+rx.swift"; sourceTree = "<group>"; };
 		DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Combinestagram.storyboard; sourceTree = "<group>"; };
 		DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Collage.swift"; sourceTree = "<group>"; };
 		DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */,
 				DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */,
 				DC6950531FD000D00097C5C9 /* UIAlertViewController+Rx.swift */,
+				DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */,
 			);
 			path = Combinestagram;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,
 				DC6950541FD000D00097C5C9 /* UIAlertViewController+Rx.swift in Sources */,
 				DC6950571FD007B70097C5C9 /* FilteringOperator.swift in Sources */,
+				DC01AB5D1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift in Sources */,
 				DC69504E1FCFDE690097C5C9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

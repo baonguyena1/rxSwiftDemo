@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     
     fileprivate let bag = DisposeBag()
     fileprivate let images = Variable<[UIImage]>([])
+    fileprivate var imageCache = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class MainViewController: UIViewController {
     
     @IBAction func actionClear() {
         images.value = []
+        imageCache = []
+        navigationItem.leftBarButtonItem = nil
     }
     
     @IBAction func actionSave() {
@@ -56,14 +59,45 @@ class MainViewController: UIViewController {
     
     @IBAction func actionAdd() {
         let photoViewsController = UIStoryboard(name: "Combinestagram", bundle: nil).instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
-        photoViewsController.selectedPhotos
+        let newPhotos = photoViewsController.selectedPhotos.share()
+        newPhotos
+//            .filter({ (image) -> Bool in
+//                return image.size.width > image.size.height
+//            })
+            .takeWhile({ [weak self] (image) -> Bool in
+                return (self?.images.value.count ?? 0) < 6
+            })
+            .filter({ [weak self] (image) -> Bool in
+                let len = UIImagePNGRepresentation(image)?.count ?? 0
+                guard self?.imageCache.contains(len) == false else {
+                    return false
+                }
+                self?.imageCache.append(len)
+                return true
+            })
             .subscribe(onNext: { [weak self] (photo) in
                 self?.images.value.append(photo)
             }) {
                 print("Completed photo selection")
             }
             .disposed(by: photoViewsController.bag)
+        
+        newPhotos
+            .ignoreElements()
+            .subscribe(onCompleted: { [weak self] in
+                self?.updateNavigationIcon()
+            })
+            .disposed(by: bag)
+        
         navigationController?.pushViewController(photoViewsController, animated: true)
+    }
+    
+    fileprivate func updateNavigationIcon() {
+        let icon = imagePreview.image?
+            .scaled(CGSize(width: 22, height: 22))
+            .withRenderingMode(.alwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon,
+                                                           style: .done, target: nil, action: nil)
     }
     
     func showMessage(_ title: String, description: String? = nil) {
