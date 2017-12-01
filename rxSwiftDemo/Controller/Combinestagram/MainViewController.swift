@@ -24,10 +24,16 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         images.asObservable()
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] (photos) in
-                self?.updateUI(photos: photos)
                 guard let preview = self?.imagePreview else { return }
                 preview.image = UIImage.collage(images: photos, size: preview.frame.size)
+            })
+            .disposed(by: bag)
+        
+        images.asObservable()
+            .subscribe(onNext: { [weak self] photos in
+                self?.updateUI(photos: photos)
             })
             .disposed(by: bag)
     }
@@ -58,38 +64,40 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func actionAdd() {
-        let photoViewsController = UIStoryboard(name: "Combinestagram", bundle: nil).instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
-        let newPhotos = photoViewsController.selectedPhotos.share()
+        let photosViewController = UIStoryboard(name: "Combinestagram", bundle: nil).instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
+        let newPhotos = photosViewController.selectedPhotos.share()
+        
         newPhotos
-//            .filter({ (image) -> Bool in
-//                return image.size.width > image.size.height
-//            })
-            .takeWhile({ [weak self] (image) -> Bool in
+            .takeWhile { [weak self] image in
                 return (self?.images.value.count ?? 0) < 6
-            })
-            .filter({ [weak self] (image) -> Bool in
-                let len = UIImagePNGRepresentation(image)?.count ?? 0
+            }
+            .filter { newImage in
+                return newImage.size.width > newImage.size.height
+            }
+            .filter { [weak self] newImage in
+                let len = UIImagePNGRepresentation(newImage)?.count ?? 0
                 guard self?.imageCache.contains(len) == false else {
                     return false
                 }
                 self?.imageCache.append(len)
                 return true
-            })
-            .subscribe(onNext: { [weak self] (photo) in
-                self?.images.value.append(photo)
-            }) {
-                print("Completed photo selection")
             }
-            .disposed(by: photoViewsController.bag)
+            .subscribe(onNext: { [weak self] newImage in
+                guard let images = self?.images else { return }
+                images.value.append(newImage)
+                }, onDisposed: {
+                    print("completed photo selection")
+            })
+            .disposed(by: photosViewController.bag)
         
         newPhotos
             .ignoreElements()
             .subscribe(onCompleted: { [weak self] in
                 self?.updateNavigationIcon()
             })
-            .disposed(by: bag)
+            .disposed(by: photosViewController.bag)
         
-        navigationController?.pushViewController(photoViewsController, animated: true)
+        navigationController!.pushViewController(photosViewController, animated: true)
     }
     
     fileprivate func updateNavigationIcon() {
