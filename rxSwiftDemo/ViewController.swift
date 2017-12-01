@@ -19,7 +19,8 @@ class ViewController: UIViewController {
 //        SubjectExample.running()
 //        FilteringOperator.runnning()
 //        SkippingOperator.running()
-        TakingOperator.running()
+//        TakingOperator.running()
+        OperatorChallenge.running()
     }
 }
 
