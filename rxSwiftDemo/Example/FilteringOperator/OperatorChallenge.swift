@@ -22,61 +22,79 @@ struct OperatorChallenge {
                 "617-555-1212": "Scott"
             ]
             
-            func phoneNumber(from inputs: [Int]) -> String {
-                var phone = inputs.map(String.init).joined()
+            let convert: (String) -> UInt? = { value in
+                if let number = UInt(value),
+                    number < 10 {
+                    return number
+                }
+                let convert: [String: UInt] = [
+                    "abc": 2, "def": 3, "ghi": 4,
+                    "jkl": 5, "mno": 6, "pqrs": 7,
+                    "tuv": 8, "wxyz": 9
+                ]
+                var converted: UInt? = nil
+                convert.keys.forEach {
+                    if $0.contains(value.lowercased()) {
+                        converted = convert[$0]
+                    }
+                }
+                return converted
+            }
+            
+            let format: ([UInt]) -> String = {
+                var phone = $0.map(String.init).joined()
+                print(phone)
                 
-                phone.insert("-", at: phone.index(
-                    phone.startIndex,
-                    offsetBy: 3)
-                )
-                
-                phone.insert("-", at: phone.index(
-                    phone.startIndex,
-                    offsetBy: 7)
-                )
-                
+                phone.insert("-", at: phone.index(phone.startIndex, offsetBy: 3))
+                phone.insert("-", at: phone.index(phone.startIndex, offsetBy: 7))
                 return phone
             }
             
-            let input = PublishSubject<Int>()
+            let dial: (String) -> String = {
+                if let contact = contacts[$0] {
+                    return "Dialing \(contact) \($0)"
+                } else {
+                    return "Contact not found"
+                }
+            }
+            
+            let input = Variable<String>("")
             
             // Add your code here
-
-            input
-                .skipWhile({ (number) -> Bool in
-                    number == 0
-                })
-                .filter({ (number) -> Bool in
-                    number < 10
-                })
+            input.asObservable()
+                .flatMap {
+                    convert($0) == nil ? Observable.empty() : Observable.just(convert($0)!)
+                }
+                .skipWhile {
+                    $0 == 0
+                }
+                .filter {
+                    $0 < 10
+                }
                 .take(10)
                 .toArray()
-                .subscribe(onNext: { (phones) in
-                    let phone = phoneNumber(from: phones)
-                    if let contact = contacts[phone] {
-                        print("Dialing \(contact) \(phone)")
-                    } else {
-                        print("Contact not found")
-                    }
+                .map(format)
+                .map(dial)
+                .subscribe(onNext: {
+                    print($0)
                 })
                 .disposed(by: disposeBag)
             
-            input.onNext(0)
-            input.onNext(603)
+            input.value = ""
+            input.value = "0"
+            input.value = "408"
             
-            input.onNext(2)
-            input.onNext(1)
+            input.value = "6"
+            input.value = ""
+            input.value = "0"
+            input.value = "3"
             
-            // Confirm that 7 results in "Contact not found", and then change to 2 and confirm that Junior is found
-            input.onNext(7)
-            for character in "5551212" {
-                if let number = Int(String(character)) {
-                    input.onNext(number)
-                }
+            for character in "JKL1A1B" {
+                input.value = "\(character)"
             }
-            input.onNext(9)
+            
+            input.value = "9"
         }
-        
         
     }
 }

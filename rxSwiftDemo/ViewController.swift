@@ -20,8 +20,8 @@ class ViewController: UIViewController {
 //        FilteringOperator.runnning()
 //        SkippingOperator.running()
 //        TakingOperator.running()
-//        OperatorChallenge.running()
-        TransformingElements.running()
+        OperatorChallenge.running()
+//        TransformingElements.running()
     }
 }
 
