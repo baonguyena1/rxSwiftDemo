@@ -20,6 +20,9 @@
 		DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950581FD00B910097C5C9 /* SkippingOperator.swift */; };
 		DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */; };
 		DC69505D1FD014C70097C5C9 /* OperatorChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */; };
+		DCD034241FD52D12002E441D /* GitFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD034231FD52D12002E441D /* GitFeed.storyboard */; };
+		DCD034271FD52D6F002E441D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD034261FD52D6F002E441D /* Event.swift */; };
+		DCD034291FD52D9C002E441D /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD034281FD52D9C002E441D /* ActivityController.swift */; };
 		DCD1BD951FD1629A0039DEA1 /* TransformingElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1BD941FD1629A0039DEA1 /* TransformingElements.swift */; };
 		DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF946281FCD10DB00780761 /* AppDelegate.swift */; };
 		DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF9462A1FCD10DB00780761 /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		DC6950581FD00B910097C5C9 /* SkippingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkippingOperator.swift; sourceTree = "<group>"; };
 		DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingOperator.swift; sourceTree = "<group>"; };
 		DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorChallenge.swift; sourceTree = "<group>"; };
+		DCD034231FD52D12002E441D /* GitFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitFeed.storyboard; sourceTree = "<group>"; };
+		DCD034261FD52D6F002E441D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DCD034281FD52D9C002E441D /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		DCD1BD941FD1629A0039DEA1 /* TransformingElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingElements.swift; sourceTree = "<group>"; };
 		DCF946251FCD10DB00780761 /* rxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF946281FCD10DB00780761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */,
+				DCD034231FD52D12002E441D /* GitFeed.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -91,6 +98,7 @@
 		DC6950451FCFAB060097C5C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DCD034221FD52D00002E441D /* GitFeed */,
 				DC6950461FCFAB130097C5C9 /* Combinestagram */,
 			);
 			path = Controller;
@@ -109,6 +117,7 @@
 		DC6950471FCFDDE30097C5C9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DCD034251FD52D60002E441D /* GitFeed */,
 				DC6950481FCFDDEF0097C5C9 /* Combinestagram */,
 			);
 			path = Helpers;
@@ -134,6 +143,22 @@
 				DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */,
 			);
 			path = FilteringOperator;
+			sourceTree = "<group>";
+		};
+		DCD034221FD52D00002E441D /* GitFeed */ = {
+			isa = PBXGroup;
+			children = (
+				DCD034281FD52D9C002E441D /* ActivityController.swift */,
+			);
+			path = GitFeed;
+			sourceTree = "<group>";
+		};
+		DCD034251FD52D60002E441D /* GitFeed */ = {
+			isa = PBXGroup;
+			children = (
+				DCD034261FD52D6F002E441D /* Event.swift */,
+			);
+			path = GitFeed;
 			sourceTree = "<group>";
 		};
 		DCD1BD931FD160B70039DEA1 /* TransformingOperators */ = {
@@ -263,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6950441FCF9F990097C5C9 /* Combinestagram.storyboard in Resources */,
+				DCD034241FD52D12002E441D /* GitFeed.storyboard in Resources */,
 				DCF946331FCD10DB00780761 /* LaunchScreen.storyboard in Resources */,
 				DCF946301FCD10DB00780761 /* Assets.xcassets in Resources */,
 				DCF9462E1FCD10DB00780761 /* Main.storyboard in Resources */,
@@ -312,11 +338,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -334,6 +362,7 @@
 			files = (
 				DC69504C1FCFDE430097C5C9 /* PhotoWriter.swift in Sources */,
 				DCF946401FCD46DD00780761 /* SubjectExample.swift in Sources */,
+				DCD034291FD52D9C002E441D /* ActivityController.swift in Sources */,
 				DC69504A1FCFDE140097C5C9 /* UIImage+Collage.swift in Sources */,
 				DC69505D1FD014C70097C5C9 /* OperatorChallenge.swift in Sources */,
 				DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */,
@@ -342,6 +371,7 @@
 				DCD1BD951FD1629A0039DEA1 /* TransformingElements.swift in Sources */,
 				DC6950501FCFDE780097C5C9 /* PhotosViewController.swift in Sources */,
 				DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */,
+				DCD034271FD52D6F002E441D /* Event.swift in Sources */,
 				DC6950521FCFDE8A0097C5C9 /* PhotoCell.swift in Sources */,
 				DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */,
 				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,

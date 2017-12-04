@@ -43,7 +43,6 @@ struct OperatorChallenge {
             
             let format: ([UInt]) -> String = {
                 var phone = $0.map(String.init).joined()
-                print(phone)
                 
                 phone.insert("-", at: phone.index(phone.startIndex, offsetBy: 3))
                 phone.insert("-", at: phone.index(phone.startIndex, offsetBy: 7))
