@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA288F122EC3802C5274C6BC /* Pods_rxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039431EB44B8B9C60DA10AFA /* Pods_rxSwiftDemo.framework */; };
 		DC01AB5D1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */; };
+		DC687B371FD6889A00B101D3 /* CombiningOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC687B361FD6889A00B101D3 /* CombiningOperators.swift */; };
 		DC6950441FCF9F990097C5C9 /* Combinestagram.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */; };
 		DC69504A1FCFDE140097C5C9 /* UIImage+Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */; };
 		DC69504C1FCFDE430097C5C9 /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */; };
@@ -39,6 +40,7 @@
 		270B145928511CF0D76623D0 /* Pods-rxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B741F98B269A2B50B79A38FD /* Pods-rxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+rx.swift"; sourceTree = "<group>"; };
+		DC687B361FD6889A00B101D3 /* CombiningOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiningOperators.swift; sourceTree = "<group>"; };
 		DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Combinestagram.storyboard; sourceTree = "<group>"; };
 		DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Collage.swift"; sourceTree = "<group>"; };
 		DC69504B1FCFDE430097C5C9 /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 				039431EB44B8B9C60DA10AFA /* Pods_rxSwiftDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC687B351FD6886C00B101D3 /* CombiningOperators */ = {
+			isa = PBXGroup;
+			children = (
+				DC687B361FD6889A00B101D3 /* CombiningOperators.swift */,
+			);
+			path = CombiningOperators;
 			sourceTree = "<group>";
 		};
 		DC6950421FCF9F600097C5C9 /* Storyboard */ = {
@@ -208,6 +218,7 @@
 		DCF9463E1FCD448D00780761 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				DC687B351FD6886C00B101D3 /* CombiningOperators */,
 				DCD1BD931FD160B70039DEA1 /* TransformingOperators */,
 				DC6950551FD007580097C5C9 /* FilteringOperator */,
 				DCF9463C1FCD444D00780761 /* ObservableExample.swift */,
@@ -368,6 +379,7 @@
 				DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */,
 				DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */,
 				DCF9463B1FCD251C00780761 /* Helpers.swift in Sources */,
+				DC687B371FD6889A00B101D3 /* CombiningOperators.swift in Sources */,
 				DCD1BD951FD1629A0039DEA1 /* TransformingElements.swift in Sources */,
 				DC6950501FCFDE780097C5C9 /* PhotosViewController.swift in Sources */,
 				DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */,

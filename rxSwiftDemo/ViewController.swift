@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 //        TakingOperator.running()
 //        OperatorChallenge.running()
 //        TransformingElements.running()
+        CombiningOperator.running()
     }
 }
 
