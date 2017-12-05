@@ -18,7 +18,9 @@ class ActivityController: UITableViewController {
     fileprivate let events = Variable<[Event]>([])
     fileprivate let bag = DisposeBag()
     fileprivate lazy var eventsFileURL = cachedFileURL("events.plist")
+    
     fileprivate lazy var modifiedFileURL = cachedFileURL("modified.txt")
+    fileprivate let lastModified = Variable<NSString?>(nil)
     
     func cachedFileURL(_ fileName: String) -> URL {
         return FileManager.default
@@ -51,6 +53,7 @@ class ActivityController: UITableViewController {
         let eventsArray = (NSArray(contentsOf: eventsFileURL)
             as? [AnyDict]) ?? []
         events.value = eventsArray.flatMap(Event.init)
+        lastModified.value = try? NSString(contentsOf: modifiedFileURL, usedEncoding: nil)
         
         refresh()
     }
@@ -61,17 +64,22 @@ class ActivityController: UITableViewController {
     
     func fetchEvents(repo: String) {
         let response = Observable.from([repo])
-        response
             .map { (urlString) -> URL in
-                    return URL(string: "https://api.github.com/repos/\(urlString)/events")!
+                return URL(string: "https://api.github.com/repos/\(urlString)/events")!
             }
-            .map { (url) -> URLRequest in
-                return URLRequest(url: url)
+            .map { [weak self] (url) -> URLRequest in
+                var request = URLRequest(url: url)
+                if let modifiedHeader = self?.lastModified.value {
+                    request.addValue(modifiedHeader as String, forHTTPHeaderField: "Last-Modified")
+                }
+                return request
             }
             .flatMap { (request) -> Observable<(response: HTTPURLResponse, data: Data)> in
                 return URLSession.shared.rx.response(request: request)
             }
             .share(replay: 1, scope: .whileConnected)
+        
+        response
             .filter { (response, data) -> Bool in
                 return 200..<300 ~= response.statusCode
             }
@@ -89,6 +97,23 @@ class ActivityController: UITableViewController {
             })
             .subscribe(onNext: { [weak self] (newEvents) in
                 self?.processEvents(newEvents)
+            })
+            .disposed(by: bag)
+        
+        response
+            .filter { (response, data) -> Bool in
+                return 200..<400 ~= response.statusCode
+            }
+            .flatMap { (response, _) -> Observable<NSString> in
+                guard let value = response.allHeaderFields["Last-Modified"] as? NSString else {
+                    return Observable.never()
+                }
+                return Observable.just(value)
+            }
+            .subscribe(onNext: { [weak self] (modifiedHeader) in
+                guard let strongSelf = self else { return }
+                strongSelf.lastModified.value = modifiedHeader
+                try? modifiedHeader.write(to: strongSelf.modifiedFileURL, atomically: true, encoding: String.Encoding.utf8.rawValue)
             })
             .disposed(by: bag)
     }
