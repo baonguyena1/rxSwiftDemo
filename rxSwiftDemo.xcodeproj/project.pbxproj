@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA288F122EC3802C5274C6BC /* Pods_rxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039431EB44B8B9C60DA10AFA /* Pods_rxSwiftDemo.framework */; };
 		DC01AB5D1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */; };
+		DC412B8E1FD7EA0D002F2D95 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC412B8D1FD7EA0D002F2D95 /* CategoryCell.swift */; };
 		DC687B371FD6889A00B101D3 /* CombiningOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC687B361FD6889A00B101D3 /* CombiningOperators.swift */; };
 		DC6950441FCF9F990097C5C9 /* Combinestagram.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */; };
 		DC69504A1FCFDE140097C5C9 /* UIImage+Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */; };
@@ -21,6 +22,16 @@
 		DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6950581FD00B910097C5C9 /* SkippingOperator.swift */; };
 		DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */; };
 		DC69505D1FD014C70097C5C9 /* OperatorChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */; };
+		DCAF5E0D1FD7A59D00C290C0 /* CombiningOperatorsPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E0C1FD7A59D00C290C0 /* CombiningOperatorsPractice.swift */; };
+		DCAF5E0F1FD7D28300C290C0 /* OurPlanet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCAF5E0E1FD7D28300C290C0 /* OurPlanet.storyboard */; };
+		DCAF5E151FD7DCAA00C290C0 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E141FD7DCAA00C290C0 /* CategoriesViewController.swift */; };
+		DCAF5E171FD7DCF100C290C0 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E161FD7DCF100C290C0 /* EventsViewController.swift */; };
+		DCAF5E191FD7DD2100C290C0 /* EOCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E181FD7DD2100C290C0 /* EOCategory.swift */; };
+		DCAF5E1B1FD7DD3A00C290C0 /* EOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E1A1FD7DD3A00C290C0 /* EOError.swift */; };
+		DCAF5E1D1FD7DD4B00C290C0 /* EOEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E1C1FD7DD4B00C290C0 /* EOEvent.swift */; };
+		DCAF5E1F1FD7DD6F00C290C0 /* EONET.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E1E1FD7DD6F00C290C0 /* EONET.swift */; };
+		DCAF5E211FD7DD8F00C290C0 /* EOLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E201FD7DD8F00C290C0 /* EOLocation.swift */; };
+		DCAF5E241FD7DDE500C290C0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF5E231FD7DDE500C290C0 /* EventCell.swift */; };
 		DCD034241FD52D12002E441D /* GitFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD034231FD52D12002E441D /* GitFeed.storyboard */; };
 		DCD034271FD52D6F002E441D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD034261FD52D6F002E441D /* Event.swift */; };
 		DCD034291FD52D9C002E441D /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD034281FD52D9C002E441D /* ActivityController.swift */; };
@@ -40,6 +51,7 @@
 		270B145928511CF0D76623D0 /* Pods-rxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B741F98B269A2B50B79A38FD /* Pods-rxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxSwiftDemo/Pods-rxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DC01AB5C1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+rx.swift"; sourceTree = "<group>"; };
+		DC412B8D1FD7EA0D002F2D95 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		DC687B361FD6889A00B101D3 /* CombiningOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiningOperators.swift; sourceTree = "<group>"; };
 		DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Combinestagram.storyboard; sourceTree = "<group>"; };
 		DC6950491FCFDE140097C5C9 /* UIImage+Collage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Collage.swift"; sourceTree = "<group>"; };
@@ -52,6 +64,16 @@
 		DC6950581FD00B910097C5C9 /* SkippingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkippingOperator.swift; sourceTree = "<group>"; };
 		DC69505A1FD00EB60097C5C9 /* TakingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingOperator.swift; sourceTree = "<group>"; };
 		DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorChallenge.swift; sourceTree = "<group>"; };
+		DCAF5E0C1FD7A59D00C290C0 /* CombiningOperatorsPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiningOperatorsPractice.swift; sourceTree = "<group>"; };
+		DCAF5E0E1FD7D28300C290C0 /* OurPlanet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OurPlanet.storyboard; sourceTree = "<group>"; };
+		DCAF5E141FD7DCAA00C290C0 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		DCAF5E161FD7DCF100C290C0 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		DCAF5E181FD7DD2100C290C0 /* EOCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOCategory.swift; sourceTree = "<group>"; };
+		DCAF5E1A1FD7DD3A00C290C0 /* EOError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOError.swift; sourceTree = "<group>"; };
+		DCAF5E1C1FD7DD4B00C290C0 /* EOEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOEvent.swift; sourceTree = "<group>"; };
+		DCAF5E1E1FD7DD6F00C290C0 /* EONET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EONET.swift; sourceTree = "<group>"; };
+		DCAF5E201FD7DD8F00C290C0 /* EOLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOLocation.swift; sourceTree = "<group>"; };
+		DCAF5E231FD7DDE500C290C0 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		DCD034231FD52D12002E441D /* GitFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitFeed.storyboard; sourceTree = "<group>"; };
 		DCD034261FD52D6F002E441D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DCD034281FD52D9C002E441D /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
@@ -92,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				DC687B361FD6889A00B101D3 /* CombiningOperators.swift */,
+				DCAF5E0C1FD7A59D00C290C0 /* CombiningOperatorsPractice.swift */,
 			);
 			path = CombiningOperators;
 			sourceTree = "<group>";
@@ -101,6 +124,7 @@
 			children = (
 				DC6950431FCF9F990097C5C9 /* Combinestagram.storyboard */,
 				DCD034231FD52D12002E441D /* GitFeed.storyboard */,
+				DCAF5E0E1FD7D28300C290C0 /* OurPlanet.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -108,6 +132,7 @@
 		DC6950451FCFAB060097C5C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DCAF5E111FD7D29900C290C0 /* OurPlanet */,
 				DCD034221FD52D00002E441D /* GitFeed */,
 				DC6950461FCFAB130097C5C9 /* Combinestagram */,
 			);
@@ -127,6 +152,7 @@
 		DC6950471FCFDDE30097C5C9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DCAF5E101FD7D28C00C290C0 /* OurPlanet */,
 				DCD034251FD52D60002E441D /* GitFeed */,
 				DC6950481FCFDDEF0097C5C9 /* Combinestagram */,
 			);
@@ -153,6 +179,51 @@
 				DC69505C1FD014C70097C5C9 /* OperatorChallenge.swift */,
 			);
 			path = FilteringOperator;
+			sourceTree = "<group>";
+		};
+		DCAF5E101FD7D28C00C290C0 /* OurPlanet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OurPlanet;
+			sourceTree = "<group>";
+		};
+		DCAF5E111FD7D29900C290C0 /* OurPlanet */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF5E141FD7DCAA00C290C0 /* CategoriesViewController.swift */,
+				DCAF5E161FD7DCF100C290C0 /* EventsViewController.swift */,
+			);
+			path = OurPlanet;
+			sourceTree = "<group>";
+		};
+		DCAF5E121FD7D2A700C290C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF5E131FD7D2B100C290C0 /* OurPlanet */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DCAF5E131FD7D2B100C290C0 /* OurPlanet */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF5E181FD7DD2100C290C0 /* EOCategory.swift */,
+				DCAF5E1A1FD7DD3A00C290C0 /* EOError.swift */,
+				DCAF5E1C1FD7DD4B00C290C0 /* EOEvent.swift */,
+				DCAF5E1E1FD7DD6F00C290C0 /* EONET.swift */,
+				DCAF5E201FD7DD8F00C290C0 /* EOLocation.swift */,
+			);
+			path = OurPlanet;
+			sourceTree = "<group>";
+		};
+		DCAF5E221FD7DDB500C290C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF5E231FD7DDE500C290C0 /* EventCell.swift */,
+				DC412B8D1FD7EA0D002F2D95 /* CategoryCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DCD034221FD52D00002E441D /* GitFeed */ = {
@@ -200,6 +271,8 @@
 		DCF946271FCD10DB00780761 /* rxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCAF5E221FD7DDB500C290C0 /* Cell */,
+				DCAF5E121FD7D2A700C290C0 /* Model */,
 				DC6950471FCFDDE30097C5C9 /* Helpers */,
 				DC6950451FCFAB060097C5C9 /* Controller */,
 				DC6950421FCF9F600097C5C9 /* Storyboard */,
@@ -299,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6950441FCF9F990097C5C9 /* Combinestagram.storyboard in Resources */,
+				DCAF5E0F1FD7D28300C290C0 /* OurPlanet.storyboard in Resources */,
 				DCD034241FD52D12002E441D /* GitFeed.storyboard in Resources */,
 				DCF946331FCD10DB00780761 /* LaunchScreen.storyboard in Resources */,
 				DCF946301FCD10DB00780761 /* Assets.xcassets in Resources */,
@@ -376,21 +450,31 @@
 				DCD034291FD52D9C002E441D /* ActivityController.swift in Sources */,
 				DC69504A1FCFDE140097C5C9 /* UIImage+Collage.swift in Sources */,
 				DC69505D1FD014C70097C5C9 /* OperatorChallenge.swift in Sources */,
+				DCAF5E1B1FD7DD3A00C290C0 /* EOError.swift in Sources */,
+				DCAF5E191FD7DD2100C290C0 /* EOCategory.swift in Sources */,
 				DCF9462B1FCD10DB00780761 /* ViewController.swift in Sources */,
 				DC6950591FD00B910097C5C9 /* SkippingOperator.swift in Sources */,
+				DCAF5E211FD7DD8F00C290C0 /* EOLocation.swift in Sources */,
 				DCF9463B1FCD251C00780761 /* Helpers.swift in Sources */,
 				DC687B371FD6889A00B101D3 /* CombiningOperators.swift in Sources */,
 				DCD1BD951FD1629A0039DEA1 /* TransformingElements.swift in Sources */,
+				DCAF5E171FD7DCF100C290C0 /* EventsViewController.swift in Sources */,
 				DC6950501FCFDE780097C5C9 /* PhotosViewController.swift in Sources */,
 				DC69505B1FD00EB60097C5C9 /* TakingOperator.swift in Sources */,
+				DCAF5E151FD7DCAA00C290C0 /* CategoriesViewController.swift in Sources */,
+				DCAF5E1F1FD7DD6F00C290C0 /* EONET.swift in Sources */,
 				DCD034271FD52D6F002E441D /* Event.swift in Sources */,
 				DC6950521FCFDE8A0097C5C9 /* PhotoCell.swift in Sources */,
 				DCF946291FCD10DB00780761 /* AppDelegate.swift in Sources */,
+				DCAF5E0D1FD7A59D00C290C0 /* CombiningOperatorsPractice.swift in Sources */,
 				DCF9463D1FCD444D00780761 /* ObservableExample.swift in Sources */,
+				DCAF5E241FD7DDE500C290C0 /* EventCell.swift in Sources */,
 				DC6950541FD000D00097C5C9 /* UIAlertViewController+Rx.swift in Sources */,
 				DC6950571FD007B70097C5C9 /* FilteringOperator.swift in Sources */,
+				DCAF5E1D1FD7DD4B00C290C0 /* EOEvent.swift in Sources */,
 				DC01AB5D1FD10C48007B0B33 /* PHPhotoLibrary+rx.swift in Sources */,
 				DC69504E1FCFDE690097C5C9 /* MainViewController.swift in Sources */,
+				DC412B8E1FD7EA0D002F2D95 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK2N7RD69E;
 				INFOPLIST_FILE = rxSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baon.rxSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -547,6 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK2N7RD69E;
 				INFOPLIST_FILE = rxSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baon.rxSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
