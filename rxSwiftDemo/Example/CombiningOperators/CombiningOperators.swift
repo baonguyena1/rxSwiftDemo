@@ -207,5 +207,35 @@ struct CombiningOperator {
                 .disposed(by: bag)
         }
         
+        // Challenges
+        example(description: "solution 1") {
+            let bag = DisposeBag()
+            let source = Observable.of(1, 3, 5, 7, 9)
+            let scanObservable = source.scan(0, accumulator: +)
+            Observable
+                .zip(source, scanObservable, resultSelector: { (value, total) -> (Int, Int) in
+                    return (value, total)
+                })
+                .subscribe(onNext: { (value, total) in
+                    print(value, "  ", total)
+                })
+                .disposed(by: bag)
+            
+        }
+        
+        example(description: "solution 2") {
+            let bag = DisposeBag()
+            let source = Observable.of(1, 3, 5, 7, 9)
+            source
+                .scan((0, 0), accumulator: { (acc, current) -> (Int, Int) in
+                    print(acc.0, acc.1, current)
+                    return (current, current + acc.1)
+                })
+                .subscribe(onNext: { (value, total) in
+                    print(value, "   ", total)
+                })
+                .disposed(by: bag)
+        }
+        
     }
 }
