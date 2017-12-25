@@ -37,7 +37,22 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func startDownload() {
         let eoCategories = EONET.categories
+        let downloadedEvents = EONET.events(forLast: 360)
+        
+        let updatedCategory = Observable
+                .combineLatest(eoCategories, downloadedEvents) { (categories, events) -> [EOCategory] in
+                    
+                    return categories.map({ (category) in
+                        var cat = category
+                        cat.events = events.filter({
+                            $0.categories.contains(category.id)
+                        })
+                        return cat
+                    })
+            }
+        
         eoCategories
+            .concat(updatedCategory)
             .bind(to: categories)
             .disposed(by: disposeBag)
     }
@@ -52,6 +67,17 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let category = categories.value[indexPath.row]
         cell.configure(category: category)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories.value[indexPath.row]
+        if !category.events.isEmpty {
+            let eventController = UIStoryboard(name: "OurPlanet", bundle: nil).instantiateViewController(withIdentifier: "events") as! EventsViewController
+            eventController.title = category.name
+            eventController.events.value = category.events
+            navigationController?.pushViewController(eventController, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

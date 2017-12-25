@@ -14,7 +14,8 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     
     func configure(category: EOCategory) {
-        titleLabel.text = category.name
+        titleLabel.text = "\(category.name) (\(category.events.count))"
+        accessoryType = (category.events.count > 0) ? .disclosureIndicator : .none
         detailLabel.text = category.description
     }
 
